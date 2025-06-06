@@ -17,17 +17,35 @@ MonoBehaviour:
     causar doen\xE7as."
   options:
   - description: "Filtrar a \xE1gua"
-    foodChange: 0
-    waterChange: 0
-    populationChange: 0
-    workerChange: -5
+    currentDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: -3
+    nextDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 3
   - description: Ignorar e continuar usando
-    foodChange: 0
-    waterChange: 0
-    populationChange: -2
-    workerChange: 0
+    currentDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: -2
+      workersChange: 0
+    nextDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 0
   - description: Fechar acesso
-    foodChange: 0
-    waterChange: -10
-    populationChange: 0
-    workerChange: 0
+    currentDayResourceChange:
+      foodChange: 0
+      waterChange: -10
+      populationChange: 0
+      workersChange: 0
+    nextDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 0

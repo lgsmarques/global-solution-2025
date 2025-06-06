@@ -17,17 +17,35 @@ MonoBehaviour:
     algu\xE9m pedindo ajuda... ou uma armadilha."
   options:
   - description: "Abrir o port\xE3o"
-    foodChange: 5
-    waterChange: 0
-    populationChange: 2
-    workerChange: 0
+    currentDayResourceChange:
+      foodChange: 5
+      waterChange: 0
+      populationChange: 2
+      workersChange: 1
+    nextDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 0
   - description: Ignorar
-    foodChange: 0
-    waterChange: 0
-    populationChange: 0
-    workerChange: 0
+    currentDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 0
+    nextDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 0
   - description: "Observar por c\xE2meras"
-    foodChange: 0
-    waterChange: 0
-    populationChange: 0
-    workerChange: -1
+    currentDayResourceChange:
+      foodChange: 5
+      waterChange: 0
+      populationChange: 2
+      workersChange: -1
+    nextDayResourceChange:
+      foodChange: 0
+      waterChange: 0
+      populationChange: 0
+      workersChange: 2

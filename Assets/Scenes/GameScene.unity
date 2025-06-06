@@ -227,6 +227,7 @@ Transform:
   - {fileID: 985434840}
   - {fileID: 1484371736}
   - {fileID: 588001778}
+  - {fileID: 597999800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &144483767
@@ -1075,6 +1076,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136f3402a99a14443b4b11ef7cdd0ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &597999799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597999800}
+  - component: {fileID: 597999801}
+  m_Layer: 0
+  m_Name: DayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597999800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597999799}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 54854104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &597999801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597999799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e731ddbbf9d955448be69844c2d20e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDay: 1
+  daysToEnd: 15
+  dayText: {fileID: 1900991501}
+  resourceManager: {fileID: 985434841}
+  sceneController: {fileID: 588001779}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,12 +1620,10 @@ MonoBehaviour:
   possibleEvents:
   - {fileID: 11400000, guid: 418d8590c91e51d4aacb7b29d63e83e4, type: 2}
   - {fileID: 11400000, guid: 59ec99faa2eb67b4a90cb59a294200a6, type: 2}
-  currentDay: 1
   timeBetweenEvents: 3
-  daysToEnd: 3
   resourceManager: {fileID: 985434841}
   eventUIManager: {fileID: 1484371737}
-  sceneController: {fileID: 588001779}
+  dayManager: {fileID: 597999801}
 --- !u!1 &1055737552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +2045,6 @@ MonoBehaviour:
   - {fileID: 805610514}
   eventManager: {fileID: 1007577072}
   currentEvent: {fileID: 0}
-  dayText: {fileID: 1900991501}
 --- !u!1 &1553181106
 GameObject:
   m_ObjectHideFlags: 0
