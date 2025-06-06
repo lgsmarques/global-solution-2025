@@ -4,8 +4,5 @@ using UnityEngine;
 public class EventOption
 {
     public string description;
-    public int foodChange;
-    public int waterChange;
-    public int populationChange;
-    public int workerChange;
+    public ResourceChange resourceChange;
 }

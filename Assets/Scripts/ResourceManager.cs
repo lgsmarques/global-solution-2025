@@ -11,24 +11,27 @@ public class ResourceManager : MonoBehaviour
     public TMP_Text waterText;
     public TMP_Text populationText;
     public TMP_Text workersText;
-    [SerializeField] SceneController sceneController;
+    [SerializeField] private SceneController sceneController;
 
     public void ConsumeResources()
     {
-        food -= population * 2;
-        water -= population * 3;
-
-        food = Mathf.Max(food, 0);
-        water = Mathf.Max(water, 0);
+        ResourceChange resourceChange = new(-population, -population * 2, 0, 0);
+        ChangeResources(resourceChange);
     }
 
-    public void ResourcesChange(int foodChange, int waterChange, int populationChange, int workersChange)
+    public void ProduceResources()
+    {
+        ResourceChange resourceChange = new(workers, workers, 0, 0);
+        ChangeResources(resourceChange);
+    }
+
+    public void ChangeResources(ResourceChange resourceChange)
     {
 
-        food += foodChange;
-        water += waterChange;
-        population += populationChange;
-        workers += workersChange;
+        food += resourceChange.foodChange;
+        water += resourceChange.waterChange;
+        population += resourceChange.populationChange;
+        workers += resourceChange.workersChange;
 
 
         food = Mathf.Max(food, 0);

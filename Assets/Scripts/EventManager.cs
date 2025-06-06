@@ -5,12 +5,10 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     public List<GameEvent> possibleEvents;
-    public int currentDay = 1;
     public float timeBetweenEvents = 60f;
-    public int daysToEnd = 15;
     [SerializeField] private ResourceManager resourceManager;
     [SerializeField] private EventUIManager eventUIManager;
-    [SerializeField] private SceneController sceneController;
+    [SerializeField] private DayManager dayManager;
 
     void Start()
     {
@@ -20,16 +18,8 @@ public class EventManager : MonoBehaviour
     IEnumerator WaitAndTriggerEvent()
     {
         yield return new WaitForSeconds(timeBetweenEvents);
-        currentDay++;
-
-        if (currentDay >= daysToEnd)
-        {
-            sceneController.EndGame();
-        }
-        else
-        {
-            TriggerRandomEvent();
-        }
+        dayManager.ChangeDay();        
+        TriggerRandomEvent();
     }
 
     public void TriggerRandomEvent()
@@ -40,8 +30,8 @@ public class EventManager : MonoBehaviour
 
     public void ExecuteEvent(GameEvent gameEvent, int optionIndex)
     {
-        EventOption option = gameEvent.options[optionIndex];
-        resourceManager.ResourcesChange(option.foodChange, option.waterChange, option.populationChange, option.workerChange);
+        ResourceChange resourceChange = gameEvent.options[optionIndex].resourceChange;
+        resourceManager.ChangeResources(resourceChange);
         
         StartCoroutine(WaitAndTriggerEvent());
     }

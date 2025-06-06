@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class EventUIManager : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class EventUIManager : MonoBehaviour
     public List<Button> buttons = new();
     public EventManager eventManager;
     public GameEvent currentEvent;
-    public TMP_Text dayText;
 
     public void ShowEvent(GameEvent gameEvent)
     {
@@ -35,10 +35,6 @@ public class EventUIManager : MonoBehaviour
         Debug.Log(optionIndex);
         eventManager.ExecuteEvent(currentEvent, optionIndex);
         eventPanel.SetActive(false);
-    }
-
-    void Update()
-    {
-        dayText.SetText("Dia " + eventManager.currentDay);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
