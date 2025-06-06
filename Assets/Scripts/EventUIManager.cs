@@ -32,7 +32,6 @@ public class EventUIManager : MonoBehaviour
 
     public void SelectOption(int optionIndex)
     {
-        Debug.Log(optionIndex);
         eventManager.ExecuteEvent(currentEvent, optionIndex);
         eventPanel.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);

@@ -11,6 +11,7 @@ public class ResourceManager : MonoBehaviour
     public TMP_Text waterText;
     public TMP_Text populationText;
     public TMP_Text workersText;
+    private ResourceChange nextDayChange = new();
     [SerializeField] private SceneController sceneController;
 
     public void ConsumeResources()
@@ -27,17 +28,29 @@ public class ResourceManager : MonoBehaviour
 
     public void ChangeResources(ResourceChange resourceChange)
     {
-
         food += resourceChange.foodChange;
         water += resourceChange.waterChange;
         population += resourceChange.populationChange;
         workers += resourceChange.workersChange;
 
-
         food = Mathf.Max(food, 0);
         water = Mathf.Max(water, 0);
         population = Mathf.Max(population, 0);
         workers = Mathf.Max(workers, 0);
+    }
+
+    public void AddToNextDayChange(ResourceChange resourceChange)
+    {
+        nextDayChange.foodChange += resourceChange.foodChange;
+        nextDayChange.waterChange += resourceChange.waterChange;
+        nextDayChange.populationChange += resourceChange.populationChange;
+        nextDayChange.workersChange += resourceChange.workersChange;
+    }
+
+    public void ExecuteNextDayChange()
+    {
+        ChangeResources(nextDayChange);
+        nextDayChange = new();
     }
 
     void Update()

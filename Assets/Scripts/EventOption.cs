@@ -4,5 +4,6 @@ using UnityEngine;
 public class EventOption
 {
     public string description;
-    public ResourceChange resourceChange;
+    public ResourceChange currentDayResourceChange;
+    public ResourceChange nextDayResourceChange;
 }

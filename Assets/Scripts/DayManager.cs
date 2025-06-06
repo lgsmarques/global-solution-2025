@@ -14,6 +14,7 @@ public class DayManager : MonoBehaviour
     {
         resourceManager.ProduceResources();
         resourceManager.ConsumeResources();
+        resourceManager.ExecuteNextDayChange();
         currentDay++;
 
         if (currentDay >= daysToEnd)

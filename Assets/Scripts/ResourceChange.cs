@@ -15,4 +15,12 @@ public class ResourceChange
         this.populationChange = populationChange;
         this.workersChange = workersChange;
     }
+
+    public ResourceChange()
+    {
+        foodChange = 0;
+        waterChange = 0;
+        populationChange = 0;
+        workersChange = 0;
+    }
 }

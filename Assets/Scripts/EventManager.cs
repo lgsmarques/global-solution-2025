@@ -30,9 +30,11 @@ public class EventManager : MonoBehaviour
 
     public void ExecuteEvent(GameEvent gameEvent, int optionIndex)
     {
-        ResourceChange resourceChange = gameEvent.options[optionIndex].resourceChange;
-        resourceManager.ChangeResources(resourceChange);
-        
+        ResourceChange currentDayResourceChange = gameEvent.options[optionIndex].currentDayResourceChange;
+        ResourceChange nextDayResourceChange = gameEvent.options[optionIndex].nextDayResourceChange;
+        resourceManager.ChangeResources(currentDayResourceChange);
+        resourceManager.AddToNextDayChange(nextDayResourceChange);
+
         StartCoroutine(WaitAndTriggerEvent());
     }
 }
