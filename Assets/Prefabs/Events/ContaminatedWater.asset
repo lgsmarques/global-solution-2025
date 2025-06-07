@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: ContaminatedWater
   m_EditorClassIdentifier: 
   title: "\xC1gua Contaminada"
-  description: "Uma das fontes de \xE1gua foi contaminada. Se continuar usando, pode
-    causar doen\xE7as."
+  description: "Uma das fontes de \xE1gua foi contaminada.\nSe continuar usando,
+    pode causar doen\xE7as."
   options:
   - description: "Filtrar a \xE1gua"
     currentDayResourceChange:
       foodChange: 0
-      waterChange: 0
+      waterChange: 60
       populationChange: 0
       workersChange: -3
     nextDayResourceChange:
@@ -30,8 +30,8 @@ MonoBehaviour:
   - description: Ignorar e continuar usando
     currentDayResourceChange:
       foodChange: 0
-      waterChange: 0
-      populationChange: -2
+      waterChange: 30
+      populationChange: -5
       workersChange: 0
     nextDayResourceChange:
       foodChange: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   - description: Fechar acesso
     currentDayResourceChange:
       foodChange: 0
-      waterChange: -10
+      waterChange: 0
       populationChange: 0
       workersChange: 0
     nextDayResourceChange:

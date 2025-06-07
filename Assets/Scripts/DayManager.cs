@@ -5,7 +5,7 @@ public class DayManager : MonoBehaviour
 {
 
     public int currentDay = 1;
-    public int daysToEnd = 15;
+    public int daysToEnd = 5;
     public TMP_Text dayText;
     [SerializeField] private ResourceManager resourceManager;
     [SerializeField] private SceneController sceneController;

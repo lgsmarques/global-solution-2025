@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: DoorKnock
   m_EditorClassIdentifier: 
   title: Barulho na Entrada
-  description: "Durante a noite, barulhos foram ouvidos do lado de fora. Pode ser
+  description: "Durante a noite, barulhos foram ouvidos do lado de fora.\nPode ser
     algu\xE9m pedindo ajuda... ou uma armadilha."
   options:
   - description: "Abrir o port\xE3o"
     currentDayResourceChange:
       foodChange: 5
-      waterChange: 0
+      waterChange: 50
       populationChange: 2
       workersChange: 1
     nextDayResourceChange:
@@ -30,7 +30,7 @@ MonoBehaviour:
   - description: Ignorar
     currentDayResourceChange:
       foodChange: 0
-      waterChange: 0
+      waterChange: 30
       populationChange: 0
       workersChange: 0
     nextDayResourceChange:
@@ -41,7 +41,7 @@ MonoBehaviour:
   - description: "Observar por c\xE2meras"
     currentDayResourceChange:
       foodChange: 5
-      waterChange: 0
+      waterChange: 30
       populationChange: 2
       workersChange: -1
     nextDayResourceChange:
